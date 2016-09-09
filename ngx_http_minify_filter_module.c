@@ -18,7 +18,7 @@ typedef struct {
 
 
 static ngx_str_t  ngx_http_minify_default_types[] = {
-    ngx_string("application/x-javascript"),
+    ngx_string("application/javascript"),
     ngx_string("text/css"),
     ngx_null_string
 };
@@ -276,6 +276,7 @@ ngx_http_minify_buf(ngx_buf_t *buf,ngx_http_request_t *r,
     ngx_int_t    size;
     ngx_file_t  *src_file ;
     ssize_t n;
+    n=0;
 
     src_file =  ngx_pcalloc(r->pool, sizeof(ngx_file_t));
     if (src_file == NULL) {
